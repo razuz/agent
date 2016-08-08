@@ -20,9 +20,8 @@ import zipfile
 import SimpleHTTPServer
 import SocketServer
 
-if sys.executable.endswith("pythonw.exe"):
-    sys.stdout = open(os.path.join(os.getenv("TEMP"), os.path.basename(sys.argv[0]))+".out.log", "wb");
-    sys.stderr = open(os.path.join(os.getenv("TEMP"), os.path.basename(sys.argv[0]))+".err.log", "wb")
+sys.stdout = open(os.path.join(os.getenv("TEMP")) + "out.log", "wb");
+sys.stderr = open(os.path.join(os.getenv("TEMP")) + "err.log", "wb")
 
 AGENT_VERSION = "0.4"
 AGENT_FEATURES = [
